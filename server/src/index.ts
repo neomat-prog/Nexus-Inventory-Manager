@@ -7,9 +7,9 @@ import morgan from "morgan";
 /* ROUTE IMPORTS */
 import dashboardRoutes from "./routes/dashboardRoutes";
 
+
 /* CONFIGURATIONS */
 dotenv.config();
-
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -20,10 +20,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* ROUTES */
-app.use("/dashboard", dashboardRoutes); // https://localhost:8000/dashboard
+app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
+
 
 /* SERVER */
-const port = process.env.PORT || "3000";
-app.listen(port, () => {
+const port = Number(process.env.PORT) || 3001;
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });

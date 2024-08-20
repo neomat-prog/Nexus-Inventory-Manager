@@ -53,7 +53,7 @@ CREATE TABLE "Expenses" (
 );
 
 -- CreateTable
-CREATE TABLE "SalesSummary" (
+CREATE TABLE "salesSummary" (
     "salesSummaryId" TEXT NOT NULL,
     "totalValue" DOUBLE PRECISION NOT NULL,
     "changePercentage" DOUBLE PRECISION,
